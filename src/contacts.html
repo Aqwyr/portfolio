@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<script src="main.js" defer></script>
+	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - FEUER</title>
+    <meta name="description" content="FEUER -- лучшие антипригарные сковородки.">
+	<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Контакты - FEUER</title>
+    <meta name="description" content="Наши контакты.">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Заголовок страницы">
+	<meta property="og:description" content="Описание страницы">
+	<meta property="og:image" content="https://.../link-to-image.jpg">
+</head>
+<body>
+    <header>
+		<h1 href="https://aqwyr.github.io/feuer/">FEUER</h1>
+        <!-- Главное меню навигации -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Простые "хлебные крошки" -->
+        <nav aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a> →
+            <span>Контакты</span>
+        </nav>
+        <h1>Контакты для связи</h1>
+        <section>
+            <h2>Завхоз председателя директора компании</h2>
+            <p>Алексей Анатольевич Шпак -- +7 (945) 563-22-19</p>
+        </section>
+        <section>
+            <h2>Заместитель завхоза председателя директора компании</h2>
+            <p>Анатолий Алексеевич Шпак -- +7 (954) 912-23-65</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 FEUER. Все права защищены.</p>
+        <p>Телефон: +7 (800) 555-35-35</p>
+    </footer>
+	
+	<!-- Кнопка открытия модалки -->
+	<button id="openDialog" type="button">Написать нам</button>
+	
+	<!-- Модалка с формой -->
+	<dialog id="contactDialog" aria-labelledby="dialogTitle">
+		<h2 id="dialogTitle">Обратная связь</h2>
+		
+		<form id="contactForm" method="dialog" novalidate>
+			<label for="name">Имя</label>
+			<input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+			
+			<label for="email">E-mail</label>
+			<input id="email" name="email" type="email" required autocomplete="email">
+
+			<label for="phone">Телефон</label>
+			<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+			<small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+
+			<label for="date">Дата</label>
+			<input id="date" name="date" type="date">
+
+			<label for="topic">Тема</label>
+			<select id="topic" name="topic" required>
+				<option value="">Выберите тему</option>
+				<option>Вопрос</option>
+				<option>Заказ</option>
+			</select>
+
+			<label for="message">Сообщение</label>
+			<textarea id="message" name="message" rows="4" required></textarea>
+			
+			<div class="form-actions">
+				<button type="button" id="closeDialog">Закрыть</button>
+				<button type="submit">Отправить</button>
+			</div>
+		</form>
+	</dialog>
+	<dialog id="openSuccess" aria-labelledby="SuccessTitle">
+		<h2 id="dialogTitle">Спасибо</h2>
+</body>
+</html>
