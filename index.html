@@ -1,119 +1,390 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - FEUER</title>
-    <meta name="description" content="Краткое описание главной страницы вашего сайта">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мой первый сайт</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Шапка сайта -->
-    <header class="site-header">
-        <a class="site-header__brand" href="/">FEUER</a>
-        <!-- Главное меню навигации -->
-        <nav class="site-nav" aria-label="Основная навигация">
-            <ul class="site-nav__list">
-                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active"
-                        href="index.html">Главная</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-        <button class="theme-toggle" type="button" aria-pressed="false">Переключить тему</button>
-        <button id="openDialog" type="button">Написать нам</button>
-    </header>
 
-    <!-- Уникальное основное содержимое страницы -->
-    <main>
-        <h1>Добро пожаловать на наш сайт!</h1>
+<!-- Шапка сайта -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <!-- Логотип + Гифка -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/kleinesfisch.gif" alt="Рыбка" class="me-2" style="height: 30px; width: auto;">
+      <span>Моё портфолио</span>
+    </a>
 
-        <!-- Секция 1 с якорем -->
-        <section id="services" class="section">
-            <h2 class="section__title">Наши услуги</h2>
-            <p>Наша компания производит самые лучшие сковородки с антипригарным покрытием в мире. А также много всего
-                того, что мы пока не можем показать...</p>
-            <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
-            <!-- Изображение -->
-            <img
-                src="assets/img/service-640.jpg" 
-                srcset="assets/img/service-640.jpg 640w, assets/img/service-960.jpg 960w, assets/img/service-1280.jpg 1280w" 
-                sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px" 
-                alt="Изображение услуги"
-                width="640" height="360" 
-                loading="lazy" decoding="async">
-        </section>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      ☰
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
+        <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-        <!-- Секция 2 с якорем и видео -->
-        <section id="portfolio" class="section hero">
-            <h2 class="section__title">Портфолио</h2>
-            <p>Примеры наших работ...</p>
-            <!-- Локальное видео -->
-            <video class="media" controls preload="metadata" playsinline width="1920" height="1080"
-                    poster="assets/video/poster.jpg">
-                    <source src="assets/video/teaser-1080.mp4" type="video/mp4">
-                    <source src="assets/video/teaser-720.mp4" type="video/mp4">
-                    <track kind="captions" srclang="ru" src="assets/video/captions-ru.vtt" label="Русские субтитры" default>
-                    Ваш браузер не поддерживает видео.
-                </video>
-		</section>
-			
-        <!-- Секция 3 с якорем -->
-        <section id="contacts" class="section">
-			<h2 class="section__title">Контактная информация</h2>
-			<p>Наши контакты...</p>
-			<a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
-        </section>
-    </main>
+<div class="container mt-4">
+  <!-- Основная композиция -->
+  <div class="row align-items-center justify-content-center g-4">
+    <!-- Левая плашка 1 -->
+    <div class="col-3 col-md-2 d-flex justify-content-center">
+      <div class="side-card">
+        <div class="card-inner">
+          <img src="assets/pictureindex1.png" alt="Здесь должно быть фото (1)">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Левая плашка 2 -->
+    <div class="col-3 col-md-2 d-none d-md-flex justify-content-center">
+      <div class="side-card">
+        <div class="card-inner">
+          <img src="assets/pictureindex2.png" alt="Здесь должно быть фото (2)">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Центральная карточка -->
+    <div class="col-6 col-md-3">
+      <div class="center-card">
+        <h3 class="typewriter"><span>Сергей</span></h3>
+        <p>Я студент группы ЭФБО-10-24</p>
+        <p>Увлекаюсь веб-разработкой</p>
+      </div>
+    </div>
+  
+    <!-- Правая плашка 1 -->
+    <div class="col-3 col-md-2 d-flex justify-content-center">
+      <div class="side-card">
+        <div class="card-inner">
+          <img src="assets/pictureindex3.png" alt="Здесь должно быть фото (3)">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Правая плашка 2 -->
+    <div class="col-3 col-md-2 d-none d-md-flex justify-content-center">
+      <div class="side-card">
+        <div class="card-inner">
+          <img src="assets/pictureindex4.png" alt="Здесь должно быть фото (4)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+<!-- Информационный блок -->
+<div class="info-block">
+  <h2>Обо мне</h2>
+  <p class="lead">
+    Я студент РТУ МИРЭА, занимаюсь созданием сайтов и приложений.
+    Учусь на факультете full-stack development.
+  </p>
+</div>
 
-    <!-- Подвал сайта -->
-    <footer class="site-footer">
-        <p>&copy; 2025 FEUER. Все права защищены.</p>
-        <p>Телефон: +7 (800) 555-35-35</p>
-    </footer>
+<!-- Раздел "Мои навыки" -->
+<section class="skills-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Мои навыки</h2>
+    <div class="row justify-content-center g-4">
 
-    <!-- Модалка с формой -->
-    <dialog id="contactDialog" class="modal" aria-labelledby="dialogTitle">
-        <h2 id="dialogTitle" class="modal__title">Обратная связь</h2>
-
-        <form id="contactForm" class="form" method="dialog" novalidate>
-            <label class="form__label" for="name">Имя</label>
-            <input class="form__input" id="name" name="name" type="text" required minlength="2"
-                autocomplete="given-name">
-
-            <label class="form__label" for="email">E-mail</label>
-            <input class="form__input" id="email" name="email" type="email" required autocomplete="email">
-
-            <label class="form__label" for="phone">Телефон</label>
-            <input class="form__input" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
-                aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required
-                pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-            <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-
-            <label class="form__label" for="date">Дата</label>
-            <input class="form__input" id="date" name="date" type="date">
-
-            <label class="form__label" for="topic">Тема</label>
-            <select class="form__select" id="topic" name="topic" required>
-                <option value="">Выберите тему</option>
-                <option>Вопрос</option>
-                <option>Заказ</option>
-            </select>
-
-            <label class="form__label" for="message">Сообщение</label>
-            <textarea class="form__textarea" id="message" name="message" rows="4" required></textarea>
-
-            <div class="form__actions">
-                <button class="form__button" type="button" id="closeDialog">Закрыть</button>
-                <button class="form__button form__button--submit" type="submit">Отправить</button>
+      <!-- C++ -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/c++picture.png" alt="C++" class="skill-img">
+              <div class="skill-name">C++</div>
             </div>
-        </form>
-    </dialog>
+            <div class="flip-card-back">
+              <p>Системное программирование, алгоритмы, высокая производительность</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <script src="main.js" defer></script>
+      <!-- HTML -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/htmlpicture.png" alt="HTML" class="skill-img">
+              <div class="skill-name">HTML</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Семантическая вёрстка, доступность, современные стандарты</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/csspicture.png" alt="CSS" class="skill-img">
+              <div class="skill-name">CSS</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Адаптивный дизайн, Flexbox/Grid, анимации и градиенты</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/pythonpicture.png" alt="Python" class="skill-img">
+              <div class="skill-name">Python</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Автоматизация, скрипты, обработка данных и простые API</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- C# -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/Csharppicture.png" alt="C#" class="skill-img">
+              <div class="skill-name">C#</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Разработка десктоп-приложений и игр на Unity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Qt -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/qtcreatorpicture.png" alt="Qt" class="skill-img">
+              <div class="skill-name">Qt</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Кроссплатформенные GUI-приложения с нативным интерфейсом</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/javascriptpicture.png" alt="JavaScript" class="skill-img">
+              <div class="skill-name">JavaScript</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Интерактивность сайтов, DOM, AJAX, работа с API и анимациями</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/bootstrappicture.png" alt="Bootstrap" class="skill-img">
+              <div class="skill-name">Bootstrap</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Адаптивная верстка, компоненты (модалки, карусели), быстрая разработка UI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SQL -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/sqlpicture.png" alt="SQL" class="skill-img">
+              <div class="skill-name">SQL</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Работа с базами данных, запросы (SELECT, JOIN, GROUP BY), проектирование таблиц</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Инструменты и технологии -->
+<section class="tools-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Инструменты и технологии</h2>
+    <div class="row justify-content-center g-4">
+      <!-- Git -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-git" style="font-size: 2.8rem; color: #f05133;"></i>
+          <div class="mt-2">Git</div>
+        </div>
+      </div>
+
+      <!-- GitHub -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-github" style="font-size: 2.8rem; color: #333;"></i>
+          <div class="mt-2">GitHub</div>
+        </div>
+      </div>
+
+      <!-- VS Code -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-filetype-js" style="font-size: 2.8rem; color: #007acc;"></i>
+          <div class="mt-2">VS Code</div>
+        </div>
+      </div>
+
+      <!-- Visual Studio -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-code-slash" style="font-size: 2.8rem; color: #007acc;"></i>
+          <div class="mt-2">Visual Studio</div>
+        </div>
+      </div>
+
+      <!-- Qt Creator -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-braces" style="font-size: 2.8rem; color: #41cd52;"></i>
+          <div class="mt-2">Qt Creator</div>
+        </div>
+      </div>
+
+      <!-- PostgreSQL -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-database" style="font-size: 2.8rem; color: #336791;"></i>
+          <div class="mt-2">PostgreSQL</div>
+        </div>
+      </div>
+
+      <!-- Astra Linux -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-terminal" style="font-size: 2.8rem; color: #000;"></i>
+          <div class="mt-2">Astra Linux</div>
+        </div>
+      </div>
+
+      <!-- PyCharm -->
+      <div class="col-6 col-md-2 text-center">
+        <div class="tool-icon">
+          <i class="bi bi-filetype-py" style="font-size: 2.8rem; color: #f37626;"></i>
+          <div class="mt-2">PyCharm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Образование -->
+<section class="education-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Образование</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="education-item p-4 bg-white rounded shadow-sm">
+          <h4 class="mb-2">РТУ МИРЭА — Российский технологический университет</h4>
+          <p class="text-muted mb-1"><strong>Бакалавриат</strong> | 2024–2028</p>
+          <p>Институт: <strong>ИПТИП - Институт перспективных технологий и индустриального программирования</strong></p>
+          <p>Факультет: <strong>Full-Stack разработка</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Цитата на космическом фоне -->
+<section class="motto-section py-5">
+  <div class="container">
+    <div class="motto-bg" style="background-image: url('assets/quoteimage.png'); background-size: cover; background-position: center; padding: 4rem 2rem; border-radius: 16px; position: relative;">
+      <div class="motto-overlay" style="background: rgba(0, 0, 0, 0.6); padding: 2rem; border-radius: 12px; text-align: center; color: white;">
+        <blockquote class="blockquote mb-0">
+          <p class="lead fst-italic">«Чем выше шкаф, тем больше дров»</p>
+          <footer class="blockquote-footer mt-3"><em>Emerald Weapon</em>, MK9</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    &copy; 2025 Aqwyr. Все права защищены.<br>
+    <a href="https://github.com/Aqwyr" target="_blank" rel="noopener">
+      <i class="bi bi-github me-1"></i>GitHub
+    </a>
+  </div>
+</footer>
+  
+<!-- Подключаем JavaScript Bootstrap (для интерактивных элементов) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Анимация появления при прокрутке -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px' // запускает анимацию чуть раньше
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+<script>
+  // Определяем текущий путь
+  const currentPath = window.location.pathname.split('/').pop();
+
+  // Находим все ссылки в навбаре
+  document.querySelectorAll('.nav-link').forEach(link => {
+    // Убираем active со всех
+    link.classList.remove('active');
+
+    // Если href совпадает с текущей страницей — добавляем active
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+</script>
 </body>
-
 </html>

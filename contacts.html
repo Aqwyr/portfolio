@@ -1,92 +1,160 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - FEUER</title>
-    <meta name="description" content="Контактная информация и форма обратной связи">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Портфолио — Контакты</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Твой собственный CSS -->
+  <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
-    <header class="site-header">
-        <a class="site-header__brand" href="/">FEUER</a>
-        <nav class="site-nav" aria-label="Основная навигация">
-            <ul class="site-nav__list">
-                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
-                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active"
-                        href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-        <button class="theme-toggle" type="button" aria-pressed="false">Переключить тему</button>
-        <button id="openDialog" type="button">Написать нам</button>
-    </header>
 
-    <main>
-        <!-- Простые "хлебные крошки" -->
-        <nav class="breadcrumbs" aria-label="Хлебные крошки">
-            <a class="breadcrumbs__link" href="index.html">Главная</a> →
-            <span>Контакты</span>
-        </nav>
+<!-- Шапка сайта -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <!-- Логотип + Гифка -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/kleinesfisch.gif" alt="Рыбка" class="me-2" style="height: 30px; width: auto;">
+      <span>Моё портфолио</span>
+    </a>
 
-        <h1>Контакты</h1>
-        <section class="section">
-            <h2>Завхоз председателя директора компании</h2>
-            <p>Алексей Анатольевич Шпак -- +7 (945) 563-22-19</p>
-        </section>
-        <section>
-            <h2>Заместитель завхоза председателя директора компании</h2>
-            <p>Анатолий Алексеевич Шпак -- +7 (954) 912-23-65</p>
-        </section>
-    </main>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      ☰
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
+        <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    <footer class="site-footer">
-        <p>&copy; 2025 FEUER. Все права защищены.</p>
-        <p>Телефон: +7 (800) 555-35-35</p>
-    </footer>
+<!-- Основной контент -->
+<div class="container mt-4 pb-5"">
+  <div class="row justify-content-center align-items-start g-4">
+    <!-- Левая колонка — заголовок + контакты -->
+    <div class="col-md-5 d-flex flex-column align-items-start">
+      <h2 class="mb-3">Связаться со мной</h2>
+      <div class="contact-list">
+        <a href="mailto:ai.boyar@icloud.com" class="contact-item">
+          <i class="bi bi-envelope-fill me-2"></i>
+          ai.boyar@icloud.com
+        </a>
+        <a href="https://t.me/arctg82" target="_blank" class="contact-item">
+          <i class="bi bi-telegram me-2"></i>
+          @arctg82
+        </a>
+        <a href="https://github.com/Aqwyr" target="_blank" class="contact-item">
+          <i class="bi bi-github me-2"></i>
+          Aqwyr
+        </a>
+      </div>
 
-    <!-- Модалка с формой -->
-    <dialog id="contactDialog" class="modal" aria-labelledby="dialogTitle">
-        <h2 id="dialogTitle" class="modal__title">Обратная связь</h2>
-
-        <form id="contactForm" class="form" method="dialog" novalidate>
-            <label class="form__label" for="name">Имя</label>
-            <input class="form__input" id="name" name="name" type="text" required minlength="2"
-                autocomplete="given-name">
-
-            <label class="form__label" for="email">E-mail</label>
-            <input class="form__input" id="email" name="email" type="email" required autocomplete="email">
-
-            <label class="form__label" for="phone">Телефон</label>
-            <input class="form__input" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
-                aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required
-                pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-            <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-
-            <label class="form__label" for="date">Дата</label>
-            <input class="form__input" id="date" name="date" type="date">
-
-            <label class="form__label" for="topic">Тема</label>
-            <select class="form__select" id="topic" name="topic" required>
-                <option value="">Выберите тему</option>
-                <option>Вопрос</option>
-                <option>Заказ</option>
-            </select>
-
-            <label class="form__label" for="message">Сообщение</label>
-            <textarea class="form__textarea" id="message" name="message" rows="4" required></textarea>
-
-            <div class="form__actions">
-                <button class="form__button" type="button" id="closeDialog">Закрыть</button>
-                <button class="form__button form__button--submit" type="submit">Отправить</button>
-            </div>
+      <!-- Форма обратной связи -->
+      <div class="mt-4 w-100">
+        <h3>Написать мне</h3>
+        <form id="contactForm" action="https://formspree.io/f/xyznbyrr" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Имя</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Ваше имя" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="example@email.ru" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Сообщение</label>
+            <textarea class="form-control" name="message" id="message" rows="4" placeholder="Чем могу помочь?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Отправить сообщение</button>
+        
+          <!-- Сообщение об успехе (скрыто по умолчанию) -->
+          <div id="successMessage" class="alert alert-success mt-3 d-none">
+            🎉 Спасибо за сообщение! Я свяжусь с вами в ближайшее время.
+          </div>
         </form>
-    </dialog>
+      </div>
+    </div>
 
-    <script src="main.js" defer></script>
+    <!-- Правая колонка — картинка -->
+    <div class="col-md-5 d-flex justify-content-center">
+      <div class="contact-image-card">
+        <img src="assets/itsmemario.png" alt="Моя фотография" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    &copy; 2025 Aqwyr. Все права защищены.<br>
+    <a href="https://github.com/Aqwyr" target="_blank" rel="noopener">
+      <i class="bi bi-github me-1"></i>GitHub
+    </a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Определяем текущий путь
+  const currentPath = window.location.pathname.split('/').pop();
+
+  // Находим все ссылки в навбаре
+  document.querySelectorAll('.nav-link').forEach(link => {
+    // Убираем active со всех
+    link.classList.remove('active');
+
+    // Если href совпадает с текущей страницей — добавляем active
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Предотвращаем стандартное поведение
+
+    const form = this;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        // Показываем сообщение об успехе
+        document.getElementById('successMessage').classList.remove('d-none');
+        
+        // Очищаем форму
+        form.reset();
+        
+        // Скрываем сообщение через 5 секунд
+        setTimeout(() => {
+          document.getElementById('successMessage').classList.add('d-none');
+        }, 5000);
+      } else {
+        throw new Error('Ошибка отправки');
+      }
+    })
+    .catch(error => {
+      alert('Произошла ошибка при отправке формы. Попробуйте позже.');
+    });
+  });
+</script>
+
 </body>
-
 </html>

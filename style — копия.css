@@ -1,0 +1,565 @@
+.center-card {
+  background: linear-gradient(to bottom, #5b0c7a 0%, #5b0c7a 50%, #d424b9 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 300px;
+  margin: 2rem auto;
+  transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
+  position: relative;
+}
+
+.center-card:hover {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 
+    0 15px 30px rgba(0,0,0,0.2),
+    0 0 15px #4facfe,
+    0 0 30px #4facfe,
+    0 0 45px #4facfe;
+  outline: 2px solid #4facfe;
+  outline-offset: 4px;
+}
+
+.side-card {
+  width: 150px;
+  height: 200px;
+  margin: 0.5rem;
+  perspective: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.side-card .card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
+  position: relative;
+}
+
+.side-card:hover .card-inner {
+  transform: translateZ(10px) scale(1.05);
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.3),
+    0 0 15px #4facfe,
+    0 0 30px #4facfe,
+    0 0 45px #4facfe;
+  outline: 2px solid #4facfe;
+  outline-offset: 4px;
+}
+
+.side-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
+  object-position: center; /* Центрирует изображение */
+  display: block;
+}
+.info-block {
+  background: #0e0d57;
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 800px;
+  margin: 3rem auto 2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  /* Отступы на всех экранах */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .info-block {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 2rem 1rem;
+    max-width: 95%;
+  }
+}
+/* Эффект выпрыгивания + неоновое свечение */
+.info-block:hover {
+  transform: translateZ(12px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+
+  /* Голубое неоновое свечение со всех сторон */
+  outline: 2px solid #4facfe;
+  outline-offset: 4px;
+  box-shadow: 
+    0 0 15px #4facfe,
+    0 0 30px #4facfe,
+    0 0 45px #4facfe,
+    0 0 60px #4facfe;
+}
+
+/* Необязательно: анимация при загрузке */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-block {
+  animation: fadeInUp 0.8s ease-out;
+}
+/* Стиль для шапки (навбара) */
+.navbar {
+  background-color: #0e0d57 !important;
+}
+
+/* Цвет текста и ссылок в шапке — сделаем белым */
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #a0a7e6 !important;
+}
+
+/* Навыки */
+.skills-section {
+  background: #f8f9fa;
+  padding: 3rem 0;
+}
+
+.flip-card {
+  perspective: 1000px;
+  height: 190px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.flip-card-front {
+  background: white;
+  color: #333;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #0e0d57, #0e0d57);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card .skill-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.flip-card .skill-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.flip-card-back p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+}
+
+/* === Footer — прилипает к низу === */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  flex: 1;
+  padding-top: 20px;
+}
+
+.footer {
+  background: #0e0d57;
+  color: #a0a7e6;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  margin-top: auto;
+}
+
+.footer a {
+  color: #d424b9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fc5c7d;
+  text-decoration: underline;
+}
+
+/* === Заголовок слева — над контактами === */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.contact-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start;
+  text-decoration: none !important;
+  color: #333 !important;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  background: #f8f9fa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.contact-item:hover {
+  color: #d424b9 !important;
+  transform: translateY(-3px);
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.contact-item i {
+  color: #5b0c7a;
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+.contact-item:hover i {
+  color: #fc5c7d;
+}
+
+/* === Карточка с изображением — пропорциональная, анимированная === */
+.contact-image-card {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-image-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-height: 750px;
+}
+
+.contact-image-card:hover {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/*Анимация появления при прокрутке*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.typewriter {
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  color: white;
+}
+
+.typewriter span {
+  display: inline-block;
+  overflow: hidden;
+  animation: typing 3s steps(40, end) forwards;
+  opacity: 1;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* НАВБАР — АНИМАЦИЯ ПРИ НАВЕДЕНИИ */
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+/* Подчёркивание при наведении */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #d424b9;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 80%;
+}
+
+/* Эффект "выпрыгивания" */
+.navbar-nav .nav-link:hover {
+  color: #fc5c7d !important;
+  transform: scale(1.05) translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Активный пункт (текущая страница) */
+.navbar-nav .nav-link.active {
+  color: #fc5c7d !important;
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba(252, 92, 125, 0.5);
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+/* === КАРТОЧКИ ПРОЕКТОВ — как в контактах === */
+.project-card {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none !important;
+  color: #333 !important;
+}
+
+.project-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-color: #d424b9;
+  background: linear-gradient(to bottom right, #fff, #f8f9fa);
+}
+
+.project-card h5 {
+  margin-bottom: 0.3rem;
+  color: #0e0d57;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.project-card p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* === Стили для изображений в модальном окне === */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  height: 200px;
+}
+
+.img-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+  background: #f8f9fa;
+}
+
+.img-caption {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Стили для блока инструментов */
+.tool-icon {
+  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tool-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/*Образование*/
+.education-item {
+  border-left: 4px solid #d424b9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/*Стиль цитаты*/
+.motto-section {
+  background: rgba(233, 236, 239, 0.3);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.motto-section .blockquote {
+  padding: 1.5rem;
+  margin: 0;
+}
+
+.motto-section .blockquote-footer {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.motto-bg {
+  transition: transform 0.3s ease;
+}
+
+.motto-bg:hover {
+  transform: scale(1.01);
+}
+
+.motto-overlay {
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* === Стили для формы обратной связи === */
+#contactForm {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+#contactForm:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+#contactForm .form-control {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#contactForm .form-control:focus {
+  border-color: #d424b9;
+  box-shadow: 0 0 0 3px rgba(212, 36, 185, 0.1);
+}
+
+#contactForm .btn {
+  background: linear-gradient(to right, #5b0c7a, #d424b9);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#contactForm .btn:hover {
+  background: linear-gradient(to right, #d424b9, #5b0c7a);
+  transform: scale(1.03);
+}
+
+#contactForm .alert {
+  border-radius: 8px;
+  font-weight: 500;
+}
+/* Отступ между контентом и футером на странице контактов */
+body > .container {
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Портфолио — Проекты</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Шапка сайта -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <!-- Логотип + Гифка -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/kleinesfisch.gif" alt="Рыбка" class="me-2" style="height: 30px; width: auto;">
+      <span>Моё портфолио</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
+        <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Основной контент -->
+<div class="container mt-4">
+  <div class="row justify-content-center align-items-start g-4">
+    <!-- Левая колонка — список проектов -->
+    <div class="col-md-6 d-flex flex-column gap-3">
+      <h2>Мои проекты</h2>
+
+      <!-- Проект 1 -->
+      <div class="project-card" data-bs-toggle="modal" data-bs-target="#konvModal">
+        <h5>Конвертер валют</h5>
+        <p>Полноценный конвертер валют на C++/QT</p>
+      </div>
+
+      <!-- Проект 2 -->
+      <div class="project-card" data-bs-toggle="modal" data-bs-target="#FeuerModal">
+        <h5>Сайт FEUER</h5>
+        <p>Первый полноценный сайт с модальным окном</p>
+      </div>
+    </div>
+
+    <!-- Правая колонка — картинка -->
+    <div class="col-md-5 d-flex justify-content-center">
+      <div class="contact-image-card">
+        <img src="assets/me.gif" alt="Это я" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальные окна -->
+<!-- Конвертер -->
+<div class="modal fade" id="konvModal" tabindex="-1" aria-labelledby="konvModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="konvModalLabel">Конвертер валют</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Технологии:</strong> C++, Qt</p>
+        <p><strong>Описание:</strong> Полноценная реализация конвертера валют с возможностью добавления пользовательских валют, перевода разных валют и стилизацией под времена года.</p>
+        <p><strong>Особенности:</strong> Графический интерфейс, стилизация фона под времена года, добавление своих валют, сравнение курсов.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Aqwyr/konverter-qt" target="_blank" class="text-decoration-none">Aqwyr/konverter-qt</a></p>
+         <!-- Две пропорциональные картинки -->
+          <div class="row mt-4 g-3">
+            <div class="col-12 col-md-6">
+              <div class="img-container" onclick="showEnlargedImage('assets/screenshotkonv.png', 'Главная страница')">
+                <img src="assets/screenshotkonv.png" alt="Главное меню Тетрис" class="img-fluid rounded shadow-sm">
+                <div class="img-caption text-center mt-2">Главное меню</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="img-container" onclick="showEnlargedImage('assets/screenshotigrikonv.png', 'Форма обратной связи')">
+                <img src="assets/screenshotigrikonv.png" alt="Окно информации о валюте" class="img-fluid rounded shadow-sm">
+                <div class="img-caption text-center mt-2">Информация о валюте</div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEUER -->
+<div class="modal fade" id="FeuerModal" tabindex="-1" aria-labelledby="FeuerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="FeuerModalLabel">Сайт FEUER</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body">
+          <p><strong>Технологии:</strong> HTML, CSS, JavaScript</p>
+          <p><strong>Описание:</strong> Первый полноценный сайт с адаптивным дизайном и модальным окном.</p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/Aqwyr/feuer" target="_blank" class="text-decoration-none">Aqwyr/feuer</a></p>
+
+          <!-- Две пропорциональные картинки -->
+          <div class="row mt-4 g-3">
+            <div class="col-12 col-md-6">
+              <div class="img-container" onclick="showEnlargedImage('assets/feuermain.png', 'Главная страница')">
+                <img src="assets/feuermain.png" alt="Главная страница FEUER" class="img-fluid rounded shadow-sm">
+                <div class="img-caption text-center mt-2">Главная страница</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="img-container" onclick="showEnlargedImage('assets/feuermodal.png', 'Форма обратной связи')">
+                <img src="assets/feuermodal.png" alt="Форма обратной связи" class="img-fluid rounded shadow-sm">
+                <div class="img-caption text-center mt-2">Форма обратной связи</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    &copy; 2025 Aqwyr. Все права защищены.<br>
+    <a href="https://github.com/Aqwyr" target="_blank" rel="noopener">
+      <i class="bi bi-github me-1"></i>GitHub
+    </a>
+  </div>
+</footer>
+
+<!-- Модальное окно для увеличенного изображения -->
+<div class="modal fade" id="enlargedImageModal" tabindex="-1" aria-labelledby="enlargedImageLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="enlargedImageLabel">Просмотр изображения</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="enlargedImage" src="" alt="Увеличенное изображение" class="img-fluid rounded shadow">
+        <div id="imageCaption" class="mt-3 text-muted"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Назад к проекту</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Активация пункта меню -->
+<script>
+  document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === 'projects.html') {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+<script>
+  // Функция для открытия увеличенного изображения
+  function showEnlargedImage(imgSrc, caption) {
+    const modal = new bootstrap.Modal(document.getElementById('enlargedImageModal'));
+    document.getElementById('enlargedImage').src = imgSrc;
+    document.getElementById('imageCaption').textContent = caption;
+    modal.show();
+  }
+</script>
+</body>
+</html>
